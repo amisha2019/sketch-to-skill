@@ -1,0 +1,29 @@
+task_name: "PickPlaceCan"
+rl_camera: "robot0_eye_in_hand"
+prop_stack: 3
+episode_length: 200
+stddev_max: 0.1
+bc_policy: "/fs/nexus-projects/Sketch_VLM_RL/amishab/BC_robomimic/can_seed0/model1.pt"
+preload_num_data: 200
+preload_datapath: "/fs/nexus-projects/Sketch_VLM_RL/amishab/datasets_robomimic/can/ph/96s/processed_96_demo20_servoing_obj.hdf5"
+num_warm_up_episode: 50
+num_train_step: 200000
+replay_buffer_size: 1000
+use_wb: 1
+mp_eval: 1
+num_eval_episode: 50
+use_state: 0
+q_agent:
+  act_method: "ibrl"
+  use_prop: 1
+  # enc_type: "resnet"
+  vit:
+    embed_style: "embed2"
+    depth: 1
+  actor:
+    dropout: 0.5
+    hidden_dim: 1024
+    feature_dim: 128
+  critic:
+    spatial_emb: 1024
+    hidden_dim: 1024

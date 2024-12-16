@@ -1,0 +1,6 @@
+dataset:
+  path: /fs/nexus-projects/Sketch_VLM_RL/amishab/datasets_robomimic/can/ph/96s/processed_96_demo20_servoing_obj.hdf5
+  rl_camera: robot0_eye_in_hand
+  num_data: 200
+use_wb: 0
+num_epoch: 200
